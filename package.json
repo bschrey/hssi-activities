@@ -1,0 +1,25 @@
+{
+  "name": "activities",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "PORT=6000 MONGODB_URI=mongodb://localhost:27017/activity node ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bschrey/hssi-activities.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bschrey/hssi-activities/issues"
+  },
+  "homepage": "https://github.com/bschrey/hssi-activities#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "http-errors": "^1.7.1",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.13",
+    "morgan": "^1.9.1"
+  }
+}
