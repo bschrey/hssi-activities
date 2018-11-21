@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/bschrey/hssi-activities#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "http-errors": "^1.7.1",
     "mongodb": "^3.1.10",

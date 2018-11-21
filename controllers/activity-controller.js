@@ -2,10 +2,30 @@ const {mongoose} = require('../db/mongoose');
 const Activity = require('../models/activity.js');
 
 exports.create = (req, res) => {
+    const _animal = req.body.animal || {};
+    const _person = req.body.person || {};
+    const _facility = req.body.faciltiy || {};
+
     const activity = new Activity({
-        name: req.body.name || "Untitled activity", 
-        address: req.body.address,
-        type: req.body.type
+        type: req.body.type,
+        date: req.body.date,
+        enddate: req.body.enddate,
+        animal: {
+            id: _animal.id,
+            name: _animal.name,
+            type: _animal.type
+        },
+        person: {
+            id: _person.id,
+            last: _person.last,
+            first: _person.first
+        },
+        facility: {
+            id: _facility.id,
+            name: _facility.name,
+            address: _facility.address,
+            type: _facility.type
+        }
     });
 
     activity.save()
@@ -51,10 +71,30 @@ exports.findOne = (req, res) => {
 };
 
 exports.update = (req, res) => {
+    const _animal = JSON.parse(req.body.animal) || {};
+    const _person = JSON.parse(req.body.person) || {};
+    const _facility = JSON.parse(req.body.faciltiy) || {};
+
     Activity.findByIdAndUpdate(req.params.activityId, {
-        name: req.body.name || "Untitled activity", 
-        address: req.body.address,
-        type: req.body.type
+        type: req.body.type,
+        date: req.body.date,
+        enddate: req.body.enddate,
+        animal: {
+            id: _animal.id,
+            name: _animal.name,
+            type: _animal.type
+        },
+        person: {
+            id: _person.id,
+            last: _person.last,
+            first: _person.first
+        },
+        facility: {
+            id: _facility.id,
+            name: _facility.name,
+            address: _facility.address,
+            type: _facility.type
+        }
     }, {new: true})
     .then(activity => {
         if(!activity) {
