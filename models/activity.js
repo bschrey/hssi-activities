@@ -20,9 +20,7 @@ const PersonSchema = mongoose.Schema({
 
 const FacilitySchema = mongoose.Schema({
 	id: String,
-	name: String,
-	address: String,
-	type: String
+	name: String
 }, {
 	id: false,
 	_id: false

@@ -4,7 +4,7 @@ const Activity = require('../models/activity.js');
 exports.create = (req, res) => {
     const _animal = req.body.animal || {};
     const _person = req.body.person || {};
-    const _facility = req.body.faciltiy || {};
+    const _facility = req.body.facility || {};
 
     const activity = new Activity({
         type: req.body.type,
@@ -22,9 +22,7 @@ exports.create = (req, res) => {
         },
         facility: {
             id: _facility.id,
-            name: _facility.name,
-            address: _facility.address,
-            type: _facility.type
+            name: _facility.name
         }
     });
 
@@ -71,9 +69,9 @@ exports.findOne = (req, res) => {
 };
 
 exports.update = (req, res) => {
-    const _animal = JSON.parse(req.body.animal) || {};
-    const _person = JSON.parse(req.body.person) || {};
-    const _facility = JSON.parse(req.body.faciltiy) || {};
+    const _animal = req.body.animal || {};
+    const _person = req.body.person || {};
+    const _facility = req.body.facility || {};
 
     Activity.findByIdAndUpdate(req.params.activityId, {
         type: req.body.type,
@@ -91,9 +89,7 @@ exports.update = (req, res) => {
         },
         facility: {
             id: _facility.id,
-            name: _facility.name,
-            address: _facility.address,
-            type: _facility.type
+            name: _facility.name
         }
     }, {new: true})
     .then(activity => {
