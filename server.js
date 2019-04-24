@@ -1,11 +1,14 @@
 const createError = require('http-errors');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const express = require('express');
 const logger = require('morgan');
+const cors = require('cors');
 
 const app = express();
 
 app.use(logger('dev'));
+
+app.use(cors());
 
 app.use(bodyParser.json());
 

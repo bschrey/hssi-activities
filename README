@@ -1,0 +1,4 @@
+docker run -d -p 6000:6000 --network hssi-backend --name hssi-activities bschrey/hssi-activities:1.0.0
+
+docker start hssi-activities
+docker stop hssi-activities

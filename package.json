@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "PORT=6000 MONGODB_URI=mongodb://localhost:27017/activity node ./server.js"
+    "start": "PORT=6000 MONGODB_URI=mongodb://localhost:27017/activity node ./server.js",
+    "docker": "node ./server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   "homepage": "https://github.com/bschrey/hssi-activities#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "http-errors": "^1.7.1",
     "mongodb": "^3.1.10",
